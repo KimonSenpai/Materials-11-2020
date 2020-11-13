@@ -44,7 +44,22 @@ public:
         obj->prev = cur->prev;
         cur->prev = obj;
         obj->next = cur;
-        
+        obj->val = val;
+    }
+    int& operator[](int pos) {
+        Node* cur;
+ 
+        if (pos >= size / 2) {
+            cur = end;
+            for (int i = size - 1; i > pos; i--)
+                cur = cur->prev;
+        }
+        else {
+            cur = beg;
+            for (int i = 0; i < pos; i++)
+                cur = cur->next;
+        }
+        return cur->val;
     }
 };
 
