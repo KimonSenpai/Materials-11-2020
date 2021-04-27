@@ -15,6 +15,7 @@ int f(int i, int j) {
         for(int val: res) r = ((val <= 0)? val: r);
         return -r + 1;
     }
+    //[=](int a) {return i*a*a;};
 }
 
 int main() {
